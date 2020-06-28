@@ -22,6 +22,32 @@ namespace UnitTest
             }
         }
         [TestMethod]
+        public void LoadTest()
+        {
+            try
+            {
+                Logic.ShootAway();
+                Assert.IsTrue(true);
+            }
+            catch
+            {
+                Assert.IsFalse(false);
+            }
+        }
+        [TestMethod]
+        public void SpinTest()
+        {
+            try
+            {
+                Logic.ShootAway();
+                Assert.IsTrue(true);
+            }
+            catch
+            {
+                Assert.IsFalse(false);
+            }
+        }
+        [TestMethod]
         public void ShootHeadTest()
             {
                 try

@@ -34,11 +34,14 @@ namespace RussianRoulette
 
         private void ShootHead_Click(object sender, EventArgs e)
         {
-            Logic.ShootAtHead();
-            PlayAgain.Enabled = true;
-            textBox1.Text = Logic.Point + "";
-            SoundPlayer player = new SoundPlayer(Resources.GunShoot);
-            player.Play();
+            {
+                Logic.ShootAtHead();
+               
+                PlayAgain.Enabled = true;
+                textBox1.Text = Logic.Point + "";
+                SoundPlayer player = new SoundPlayer(Resources.GunShoot);
+                player.Play();
+            }
         }
 
         private void Spin_Click(object sender, EventArgs e)
