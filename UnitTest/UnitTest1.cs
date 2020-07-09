@@ -1,65 +1,49 @@
 ﻿using System;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RussianRoulette;
 
 namespace UnitTest
 {
     [TestClass]
     public class UnitTest1
+
     {
-        RussianRoulette.LogicClass Logic = new RussianRoulette.LogicClass();
+        LogicClass test = new LogicClass();
 
         [TestMethod]
-        public void ShootAwayTest()
+        public void TestMethod1()
         {
-            try
-            {
-                Logic.ShootAway();
-                Assert.IsTrue(true);
-            }
-            catch
-            {
-                Assert.IsFalse(false);
-            }
+            int testResult = test.Spin();
+
+            Assert.IsTrue(test.Spin() > 0);
+
         }
         [TestMethod]
-        public void LoadTest()
+        public void TestMethod2()
         {
-            try
-            {
-                Logic.ShootAway();
-                Assert.IsTrue(true);
-            }
-            catch
-            {
-                Assert.IsFalse(false);
-            }
+            RussianRoulette.LogicClass testshoot = new RussianRoulette.LogicClass();
+
+            int testResultshoot = testshoot.ShootAway();
+
+            Assert.IsTrue(testResultshoot <= 4 && testResultshoot > 0);
+
         }
         [TestMethod]
-        public void SpinTest()
+        public void TestMethod3()
         {
-            try
-            {
-                Logic.ShootAway();
-                Assert.IsTrue(true);
-            }
-            catch
-            {
-                Assert.IsFalse(false);
-            }
+            RussianRoulette.LogicClass testShootAway = new RussianRoulette.LogicClass();
+
+            int testResultShootAway = testShootAway.Spin();
+
+            Assert.IsTrue(testResultShootAway < 7 && testResultShootAway > 0);
+
         }
-        [TestMethod]
-        public void ShootHeadTest()
-            {
-                try
-                {
-                    Logic.ShootHead();
-                    Assert.IsTrue(true);
-                }
-                catch
-                {
-                    Assert.IsFalse(false);
-                }
-            }
-        }
+
     }
+}
+
+
+
+
 

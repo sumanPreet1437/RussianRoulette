@@ -34,19 +34,17 @@ namespace RussianRoulette
             this.Spin = new System.Windows.Forms.Button();
             this.Load = new System.Windows.Forms.Button();
             this.ShootAway = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Point = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.PlayAgain = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.LoadGunPicture = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadGunPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // ShootHead
             // 
-            this.ShootHead.Location = new System.Drawing.Point(318, 195);
+            this.ShootHead.Location = new System.Drawing.Point(5, 250);
+            this.ShootHead.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.ShootHead.Name = "ShootHead";
-            this.ShootHead.Size = new System.Drawing.Size(96, 23);
+            this.ShootHead.Size = new System.Drawing.Size(112, 25);
             this.ShootHead.TabIndex = 0;
             this.ShootHead.Text = "Shoot At Head";
             this.ShootHead.UseVisualStyleBackColor = true;
@@ -54,9 +52,10 @@ namespace RussianRoulette
             // 
             // Spin
             // 
-            this.Spin.Location = new System.Drawing.Point(102, 380);
+            this.Spin.Location = new System.Drawing.Point(5, 212);
+            this.Spin.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.Spin.Name = "Spin";
-            this.Spin.Size = new System.Drawing.Size(75, 23);
+            this.Spin.Size = new System.Drawing.Size(112, 26);
             this.Spin.TabIndex = 1;
             this.Spin.Text = "Spin";
             this.Spin.UseVisualStyleBackColor = true;
@@ -64,9 +63,10 @@ namespace RussianRoulette
             // 
             // Load
             // 
-            this.Load.Location = new System.Drawing.Point(3, 380);
+            this.Load.Location = new System.Drawing.Point(5, 174);
+            this.Load.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.Load.Name = "Load";
-            this.Load.Size = new System.Drawing.Size(75, 23);
+            this.Load.Size = new System.Drawing.Size(112, 26);
             this.Load.TabIndex = 2;
             this.Load.Text = "Load";
             this.Load.UseVisualStyleBackColor = true;
@@ -74,79 +74,58 @@ namespace RussianRoulette
             // 
             // ShootAway
             // 
-            this.ShootAway.Location = new System.Drawing.Point(318, 261);
+            this.ShootAway.Location = new System.Drawing.Point(5, 287);
+            this.ShootAway.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.ShootAway.Name = "ShootAway";
-            this.ShootAway.Size = new System.Drawing.Size(75, 23);
+            this.ShootAway.Size = new System.Drawing.Size(112, 26);
             this.ShootAway.TabIndex = 3;
             this.ShootAway.Text = "Shoot Away";
             this.ShootAway.UseVisualStyleBackColor = true;
-            this.ShootAway.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(61, 1);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // Point
-            // 
-            this.Point.AutoSize = true;
-            this.Point.Location = new System.Drawing.Point(12, 9);
-            this.Point.Name = "Point";
-            this.Point.Size = new System.Drawing.Size(31, 13);
-            this.Point.TabIndex = 5;
-            this.Point.Text = "Point";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(358, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Russian Roulette";
+            this.ShootAway.Click += new System.EventHandler(this.ShootAway_Click);
             // 
             // PlayAgain
             // 
-            this.PlayAgain.Location = new System.Drawing.Point(703, 4);
+            this.PlayAgain.Location = new System.Drawing.Point(5, 1);
+            this.PlayAgain.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.PlayAgain.Name = "PlayAgain";
-            this.PlayAgain.Size = new System.Drawing.Size(96, 23);
+            this.PlayAgain.Size = new System.Drawing.Size(112, 40);
             this.PlayAgain.TabIndex = 7;
             this.PlayAgain.Text = "Play Again";
             this.PlayAgain.UseVisualStyleBackColor = true;
             this.PlayAgain.Click += new System.EventHandler(this.PlayAgain_Click);
             // 
-            // pictureBox1
+            // LoadGunPicture
             // 
-            this.pictureBox1.Image = global::RussianRoulette.Properties.Resources.z1;
-            this.pictureBox1.Location = new System.Drawing.Point(699, 183);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.LoadGunPicture.Image = global::RussianRoulette.Properties.Resources.z1;
+            this.LoadGunPicture.Location = new System.Drawing.Point(1070, 166);
+            this.LoadGunPicture.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.LoadGunPicture.Name = "LoadGunPicture";
+            this.LoadGunPicture.Size = new System.Drawing.Size(181, 134);
+            this.LoadGunPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LoadGunPicture.TabIndex = 10;
+            this.LoadGunPicture.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RussianRoulette.Properties.Resources.shoot;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.BackgroundImage = global::RussianRoulette.Resource1._09;
+            this.ClientSize = new System.Drawing.Size(1288, 505);
+            this.Controls.Add(this.LoadGunPicture);
             this.Controls.Add(this.PlayAgain);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Point);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ShootAway);
             this.Controls.Add(this.Load);
             this.Controls.Add(this.Spin);
             this.Controls.Add(this.ShootHead);
+            this.Font = new System.Drawing.Font("Microsoft Uighur", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.LoadGunPicture)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -156,8 +135,6 @@ namespace RussianRoulette
         private System.Windows.Forms.Button Spin;
         private new System.Windows.Forms.Button Load;
         private System.Windows.Forms.Button ShootAway;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label Point;
         private object form1;
 
         public object GetForm1()
@@ -174,10 +151,8 @@ namespace RussianRoulette
         {
             Load = load;
         }
-
-        private Label label1;
         private Button PlayAgain;
-        private PictureBox pictureBox1;
+        private PictureBox LoadGunPicture;
     }
 }
 

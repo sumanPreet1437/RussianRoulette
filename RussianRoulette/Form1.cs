@@ -8,77 +8,96 @@ namespace RussianRoulette
     public partial class Form1 : Form
     {
         LogicClass Logic = new LogicClass();
+
+        public object LoadGun { get; private set; }
+        public object LoadImg { get; private set; }
+
         public Form1()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Load.Enabled = true;
+            // disable spin, playagain, textbox, shoot button and enable load button only at MainForm Load
             Spin.Enabled = false;
-            ShootHead.Enabled = false;
+           ShootHead.Enabled = false;
             ShootAway.Enabled = false;
+           
+
         }
 
         private void Load_Click(object sender, EventArgs e)
         {
-            Logic.Load();
+            
+            SoundPlayer sp = new SoundPlayer(RussianRoulette.Resource1.Load);
+            sp.Play();//sound effect to the load button and its source is mentioned
             Load.Enabled = false;
-            Spin.Enabled = true;
-            ShootHead.Enabled = false;
             ShootAway.Enabled = false;
+            ShootHead.Enabled = false;
             PlayAgain.Enabled = false;
-            SoundPlayer player = new SoundPlayer(Resources.Load);
-            player.Play();
+            Spin.Enabled = true;// it is to disable the spin button unless the gun is loaded
+            Logic.Load();//calling the load function to act here
+           
         }
 
         private void ShootHead_Click(object sender, EventArgs e)
         {
-            {
-                Logic.ShootAtHead();
-               
-                PlayAgain.Enabled = true;
-                textBox1.Text = Logic.Point + "";
-                SoundPlayer player = new SoundPlayer(Resources.GunShoot);
-                player.Play();
-            }
+
+            Spin.Enabled = false;
+            Load.Enabled = false;
+            SoundPlayer sp = new SoundPlayer(RussianRoulette.Resource1.GunShoot);
+            sp.Play();
+            Logic.ShootAtHead();//calling the shootaway logic to act
+            
+            
         }
 
         private void Spin_Click(object sender, EventArgs e)
         {
-            Logic.Spin();
-            Logic.Load();
-            Load.Enabled = false;
+            Load.Enabled = false;// load button is disablesd after the player has once loaded the bullet
             Spin.Enabled = false;
-            ShootHead.Enabled = true;
-            ShootAway.Enabled = true;
-            PlayAgain.Enabled = false;
-            SoundPlayer player = new SoundPlayer(Resources.Spin);
-            player.Play();
+            SoundPlayer sp = new SoundPlayer(RussianRoulette.Resource1.Spin);
+            sp.Play();
+            ShootHead.Enabled = true;// fire is disabled until the chamber is spinned
+            ShootAway.Enabled = true;//shootaway is disabled until the chamber is spinned
+            Logic.Spin();//calling the spin function to act
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void ShootAway_Click(object sender, EventArgs e)
         {
-            if(Logic.ShootingAwayChances == 0)
-            {
-                ShootAway.Enabled = false;
-                ShootHead.Enabled = false;
-                PlayAgain.Enabled = true;
-            }
-            Logic.ShootAway();
-            textBox1.Text = Logic.Point + "";
-            SoundPlayer player = new SoundPlayer(Resources.GunShoot);
-            player.Play();
+            Spin.Enabled = false;
+            Load.Enabled = false;
+
+            SoundPlayer sp = new SoundPlayer(RussianRoulette.Resource1.GunShoot);
+            sp.Play();
+            Logic.ShootAway();//calling the shootaway logic to act
+            
         }
 
         private void PlayAgain_Click(object sender, EventArgs e)
         {
-            Logic.Load();
+            this.Controls.Clear();
+            this.InitializeComponent();
             Load.Enabled = true;
             Spin.Enabled = false;
-            ShootHead.Enabled = false;
             ShootAway.Enabled = false;
+            ShootHead.Enabled = false;
            
+           
+        }
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
